@@ -1,0 +1,24 @@
+{
+  "name": "tools.jodyduke.co.uk",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "ncu": "^0.2.1",
+    "node-sass-chokidar": "^1.0.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "webfontloader": "^1.6.28"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar src/styles/App.scss -o src/styles",
+    "watch-css": "npm run build-css && node-sass-chokidar src/styles/App.scss -o src/styles --watch --recursive",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

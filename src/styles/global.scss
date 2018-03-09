@@ -1,0 +1,38 @@
+$header-font: 'Raleway', sans-serif;
+$body-font: 'Cantarell', sans-serif;
+
+$background: #fdfffc;
+$body-text: #3D3A4B;
+$green: #2ec4b6;
+$red: #e71d36;
+$yellow: #ff9f1c;
+$blue: #048ba8;
+$orange: #2e1f27;
+
+@mixin text-sharpen {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    @include text-sharpen;
+    font-family: $body-font;
+    font-size: 90%;
+    color: $body-text;
+    background: $background;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font;
+    color: $body-text;
+    font-weight: 400;
+}
+
+.app {
+    display: grid;
+    background-color: $background;
+    grid-template-columns: 200px 1fr 100px;
+    grid-template-rows: 100vh;
+}
+
+

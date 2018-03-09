@@ -1,0 +1,89 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Cantarell", sans-serif;
+  font-size: 90%;
+  color: #3D3A4B;
+  background: #fdfffc; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+  color: #3D3A4B;
+  font-weight: 400; }
+
+.app {
+  display: grid;
+  background-color: #fdfffc;
+  grid-template-columns: 200px 1fr 100px;
+  grid-template-rows: 100vh; }
+
+.menu {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 200px;
+  grid-template-rows: 70px 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: rgba(1, 22, 39, 0.7);
+  padding: 5px 0px 0px; }
+
+.menu h1 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fdfffc;
+  font-size: 180%;
+  line-height: 100%;
+  letter-spacing: 2px;
+  padding: 0px 10px 0px; }
+
+.logo {
+  color: #fdfffc;
+  padding: 0px 10px 0px; }
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0px 0px 0px 0px; }
+
+.navLink {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+
+.navLink i {
+  display: block;
+  margin-bottom: 5px; }
+
+.navLink a {
+  text-decoration: none;
+  color: #fdfffc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.green {
+  background-color: #2ec4b6; }
+
+.red {
+  background-color: #e71d36; }
+
+.yellow {
+  background-color: #ff9f1c; }
+
+.blue {
+  background-color: #048ba8; }
+
+.orange {
+  background-color: #2e1f27; }
+
+.active {
+  color: #3D3A4B !important; }
+
+.navLink a:visited {
+  color: #fdfffc; }
+
+.main {
+  padding: 0px 10px; }
+
+.form-element {
+  display: block;
+  margin-top: 1em; }
