@@ -9,6 +9,7 @@ $menu-text: $background;
     grid-template-rows: 70px 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: $menu-main;
     padding: 5px 0px 0px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .menu h1 {
