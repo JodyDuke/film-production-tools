@@ -32,12 +32,11 @@ class HolidayPayCalculator extends Component {
             holDaysOwed : result.holDaysOwed,
             holDaysRemaining : result.holDaysRemaining,
             totalPay: result.totalPay
-        })
+        //This function provides a callback that feeds the data up to main.js state
+        }, () => this.props.onSubmit(this.state))
 
-        //This line feeds the data up to main.js state
-        this.props.onSubmit(this.state)
+        
     }
-
 
 
     render(){
