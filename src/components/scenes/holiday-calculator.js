@@ -35,7 +35,7 @@ class HolidayPayCalculator extends Component {
         })
 
         //This line feeds the data up to main.js state
-        this.props.history(this.state)
+        this.props.onSubmit(this.state)
     }
 
 
