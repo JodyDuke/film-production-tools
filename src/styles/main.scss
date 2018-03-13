@@ -1,8 +1,13 @@
-.main {
+.main-full{
     display: grid;
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 1fr 430px;
+    padding-left: 10px;
 }
 
-.history{
-    border-left: 1px solid black;
+.main {
+    display: grid;
+    grid-template-columns: 1fr 430px;
+    padding-left: 10px;
+    overflow: hidden;
 }
+

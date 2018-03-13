@@ -1,6 +1,10 @@
+.main-full {
+  display: grid;
+  grid-template-columns: 1fr 430px;
+  padding-left: 10px; }
+
 .main {
   display: grid;
-  grid-template-columns: 1fr 200px; }
-
-.history {
-  border-left: 1px solid black; }
+  grid-template-columns: 1fr 430px;
+  padding-left: 10px;
+  overflow: hidden; }
