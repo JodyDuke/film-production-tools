@@ -6,6 +6,7 @@ class HolidayPayCalculator extends Component {
     constructor(props){
         super(props);
         this.state = {
+            name : 'Holiday pay calculator',
             daysWorked : 5,
             weeksEmployed: 10,
             payRate : 500,
@@ -31,11 +32,10 @@ class HolidayPayCalculator extends Component {
             moneyOwed : result.moneyOwed,
             holDaysOwed : result.holDaysOwed,
             holDaysRemaining : result.holDaysRemaining,
-            totalPay: result.totalPay
+            totalPay: result.totalPay,
+            time: new Date()
         //This function provides a callback that feeds the data up to main.js state
-        }, () => this.props.onSubmit(this.state))
-
-        
+        }, () => this.props.onSubmit(this.state))          
     }
 
 
