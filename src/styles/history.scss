@@ -1,0 +1,75 @@
+@mixin sidebar-transition {
+    -webkit-transition: margin-left 0.3s linear; /* Safari */
+    transition: margin-left 0.3s linear;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+}
+
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 100px 330px;
+    width: 430px;
+    margin-left: 330px;
+    height: 100vh;
+    @include sidebar-transition;
+}
+
+.open {
+    margin-left: 0px;
+    @include sidebar-transition;
+}
+
+.history {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.history-node {
+    margin: 0px auto;
+    color: white;
+    width: 80%;
+    padding: 0px 10px;
+    background-color: $body-text;
+    border-radius: 4px;
+}
+
+.sidebar-button-container {
+    text-align: center;
+    min-height: 100vh;
+    width: 100px;
+}
+
+.sidebar-button {
+    @include button-reset;
+    margin-top: 10px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    background-color: $yellow;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 10px
+}
+
+.clear-history {
+    text-align: right;
+}
+
+.clear-history button {
+    @include button-reset;
+    margin-top: 10px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    background-color: $blue;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 10px
+}
