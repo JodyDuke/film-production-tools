@@ -1,21 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-
-class History extends Component {
-    render(){
-        const data = this.props.historyData
+function History(props) {
+        const data = props.historyData
         const string = data.map((data, i) => {
-            console.log(i, data)
-            return <p key={i}>{data.moneyOwed}</p>
+            return (
+                <div key={i} className="history-node">
+                    <p>{data.name}</p>
+                    <p>{data.time.toString()}</p>
+                    <p>{data.holTaken}</p>
+                </div>
+            )
         })
 
         return (
-           <div className="history">
-           {string}
-           </div> 
+            <div className="history">
+                <div className="clear-history">
+                    <button>Clear all</button>
+                </div>
+                {string}
+            </div> 
+
         )
-    }
 }
 
-export default History;
+
+export default History
