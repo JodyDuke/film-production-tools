@@ -84,8 +84,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-full {
   display: grid;
-  grid-template-columns: 1fr 430px;
-  padding-left: 10px; }
+  grid-template-columns: 1fr 100px;
+  padding-left: 10px;
+  overflow: hidden; }
 
 .main {
   display: grid;
@@ -98,24 +99,28 @@ h1, h2, h3, h4, h5, h6 {
   /* remove scrollbar space */ }
 
 .sidebar {
+  position: absolute;
   margin: 0;
   padding: 0;
+  right: -330px;
   display: grid;
   grid-template-columns: 100px 330px;
   width: 430px;
   margin-left: 330px;
   height: 100vh;
-  -webkit-transition: margin-left 0.3s linear;
+  -webkit-transition: margin-left 0.3s, right 0.3s linear;
   /* Safari */
-  transition: margin-left 0.3s linear; }
+  transition: margin-left 0.3s, right 0.3s linear; }
 
 .open {
+  right: 0px;
   margin-left: 0px;
-  -webkit-transition: margin-left 0.3s linear;
+  -webkit-transition: margin-left 0.3s, right 0.3s linear;
   /* Safari */
-  transition: margin-left 0.3s linear; }
+  transition: margin-left 0.3s, right 0.3s linear; }
 
 .history {
+  background-color: white;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100vh;

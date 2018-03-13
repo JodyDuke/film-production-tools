@@ -1,7 +1,8 @@
 .main-full {
   display: grid;
-  grid-template-columns: 1fr 430px;
-  padding-left: 10px; }
+  grid-template-columns: 1fr 100px;
+  padding-left: 10px;
+  overflow: hidden; }
 
 .main {
   display: grid;

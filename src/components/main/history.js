@@ -16,7 +16,7 @@ function History(props) {
         return (
             <div className="history">
                 <div className="clear-history">
-                    <button>Clear all</button>
+                    <button onClick={props.historyWipe}>Clear all</button>
                 </div>
                 {string}
             </div> 

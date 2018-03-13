@@ -1,6 +1,6 @@
 @mixin sidebar-transition {
-    -webkit-transition: margin-left 0.3s linear; /* Safari */
-    transition: margin-left 0.3s linear;
+    -webkit-transition: margin-left 0.3s, right 0.3s linear; /* Safari */
+    transition: margin-left 0.3s, right 0.3s linear;
 }
 
 ::-webkit-scrollbar {
@@ -9,8 +9,10 @@
 
 
 .sidebar {
+    position: absolute;
     margin: 0;
     padding: 0;
+    right: -330px;
     display: grid;
     grid-template-columns: 100px 330px;
     width: 430px;
@@ -20,11 +22,13 @@
 }
 
 .open {
+    right: 0px;
     margin-left: 0px;
     @include sidebar-transition;
 }
 
 .history {
+    background-color: white;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100vh;
