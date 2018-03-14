@@ -3,6 +3,7 @@
     transition: margin-left 0.3s, right 0.3s linear;
 }
 
+
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
 }
@@ -46,19 +47,13 @@
 
 .sidebar-button-container {
     text-align: center;
-    min-height: 100vh;
+    height: 100vh;
     width: 100px;
 }
 
 .sidebar-button {
     @include button-reset;
-    margin-top: 10px;
-    border: none;
-    color: white;
-    border-radius: 4px;
-    background-color: $yellow;
-    padding: 5px 10px;
-    text-decoration: none;
+    @include button-style($yellow);
     margin-right: 10px
 }
 
@@ -68,12 +63,6 @@
 
 .clear-history button {
     @include button-reset;
-    margin-top: 10px;
-    border: none;
-    color: white;
-    border-radius: 4px;
-    background-color: $blue;
-    padding: 5px 10px;
-    text-decoration: none;
+    @include button-style($blue);
     margin-right: 10px
 }
