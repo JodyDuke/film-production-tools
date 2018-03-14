@@ -12,11 +12,13 @@ class FramerateCalculator extends Component {
             hours : 0,
             minutes : 0,
             seconds : 0,
-            frames : 0
+            frames : 0,
+            total : ''
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.clear = this.clear.bind(this)
     }
 
     handleSubmit(e) {
@@ -39,7 +41,18 @@ class FramerateCalculator extends Component {
 
     handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
+    }
 
+    clear() {
+        this.setState({ timeStamp: new Date() }, () => this.props.onSubmit(this.state))
+        this.setState({
+            currentHistory : [],
+            hours : 0,
+            minutes : 0,
+            seconds : 0,
+            frames : 0,
+            total : ''
+        })
     }
 
     render() {
@@ -51,6 +64,7 @@ class FramerateCalculator extends Component {
         return (
             <div>
             <h1>Framerate Calculator</h1>
+            <button onClick={this.clear}>Clear</button>
             <form onSubmit={this.handleSubmit}>
                     <FormItem className="form-element" type="number" name="framerate" text="Framerate: " value={this.state.framerate} onChange={this.handleChange.bind(this)} />
                         <FormItem className="form-element" type="number" name="hours" text="Hours: " value={this.state.hours} onChange={this.handleChange.bind(this)} />
