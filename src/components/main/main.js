@@ -23,7 +23,7 @@ class Main extends Component {
 
     updateHistory(props) {
         let currentHistory = this.state.history
-        currentHistory.push(props)
+        currentHistory.unshift(props)
         this.setState({history : currentHistory})
     }
 
