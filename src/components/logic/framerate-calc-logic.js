@@ -22,9 +22,6 @@ export const frameCalc = (props, framerate) => {
         m = (m % 60)
     }
 
-    //console.log(framerate)
-    //console.log(props)
-    //console.log('totalTime: ', h + ' : ' + m + ' : ' + s + ' : ' + f)
     return h + ' : ' + m + ' : ' + s + ' : ' + f
 }
 
