@@ -15,10 +15,10 @@ class Menu extends Component {
                 </div>
                     <NavItem nav="/" linkName="Home" faIcon="fa fa-home fa-3x" className="navLink blue" />
                     <NavItem nav="/holiday_pay_calculator" linkName="Holiday Pay Calculator" faIcon="fa fa-plane fa-3x" className="navLink green" />
-                    <NavItem nav="/date_difference_calculator" linkName="Date Difference Calculator" faIcon="fa fa-calendar-o fa-3x" className="navLink yellow"/>
-                    <NavItem nav="/framerate_calculator" linkName="Framerate Calculator" faIcon="fa fa-film fa-3x" className="navLink red"/>
-                    <NavItem nav="/time_calculator" linkName="Time Calculator" faIcon="fa fa-clock-o fa-3x" className="navLink purple"/>
-
+                    <NavItem nav="/time_calculator" linkName="Time Calculator" faIcon="fa fa-clock-o fa-3x" className="navLink purple" />
+                    <NavItem nav="/framerate_calculator" linkName="Framerate Calculator" faIcon="fa fa-film fa-3x" className="navLink yellow" />
+                    <NavItem nav="/date_difference_calculator" linkName="Date Difference Calculator" faIcon="fa fa-calendar-o fa-3x" className="navLink red"/>
+                    
             </div>
         )
     }

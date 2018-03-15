@@ -47,7 +47,7 @@ class Main extends Component {
                     <Route path="/holiday_pay_calculator" render={() => <HolidayPayCalculator onSubmit={this.updateHistory}/>} />
                     <Route path="/date_difference_calculator" component={DateDifferenceCalculator} />
                     <Route path="/framerate_calculator" render={() => <FramerateCalculator onSubmit={this.updateHistory} />} />
-                    <Route path="/time_calculator" component={TimeCalculator} />
+                    <Route path="/time_calculator" render={() => <TimeCalculator onSubmit={this.updateHistory} />} />
                 </div>
                 <div className={sideBarClass}>
                     <div className="sidebar-button-container">

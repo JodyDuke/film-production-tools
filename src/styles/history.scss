@@ -30,7 +30,7 @@
 
 .history {
     @include text-sharpen;
-    background-color: white;
+    background-color: $menu-main;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100vh;
@@ -40,7 +40,7 @@
 
 .history-node {
     margin: 0px auto;
-    color: $body-text;
+    color: white;
     width: 80%;
     padding: 0px 10px;
 }
@@ -50,7 +50,7 @@
 }
 
 .history-node h2 {
-    color: $body-text;
+    color: white;
     padding-top: 10px;
     margin-bottom: 3px;
 }

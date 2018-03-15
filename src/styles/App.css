@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #048ba8; }
 
 .purple {
-  background-color: #2e1f27; }
+  background-color: #8FC93A; }
 
 .menu {
   display: grid;
@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
 .history {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+  background-color: rgba(1, 22, 39, 0.7);
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100vh;
@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .history-node {
   margin: 0px auto;
-  color: #3D3A4B;
+  color: white;
   width: 80%;
   padding: 0px 10px; }
 
@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 1px; }
 
 .history-node h2 {
-  color: #3D3A4B;
+  color: white;
   padding-top: 10px;
   margin-bottom: 3px; }
 
