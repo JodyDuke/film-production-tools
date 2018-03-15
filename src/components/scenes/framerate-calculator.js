@@ -36,7 +36,7 @@ class FramerateCalculator extends Component {
         this.setState({
             currentHistory : newHistory,
             total : frameTotal
-        }, () => console.log(this.state))
+        })
     }
 
     handleChange(e) {
@@ -44,15 +44,20 @@ class FramerateCalculator extends Component {
     }
 
     clear() {
-        this.setState({ timeStamp: new Date() }, () => this.props.onSubmit(this.state))
-        this.setState({
-            currentHistory : [],
-            hours : 0,
-            minutes : 0,
-            seconds : 0,
-            frames : 0,
-            total : ''
+        if(this.state.currentHistory.length > 1) {
+        this.setState({ timeStamp: new Date() }, () => {
+            this.props.onSubmit(this.state)
+        
+            this.setState({
+                currentHistory : [],
+                hours : 0,
+                minutes : 0,
+                seconds : 0,
+                frames : 0,
+                total : ''
+            })
         })
+        }
     }
 
     render() {
