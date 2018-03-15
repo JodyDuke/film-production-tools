@@ -1,9 +1,9 @@
 import React,{ Component } from "react";
 import { Route } from "react-router-dom";
-import HolidayPayCalculator from '../scenes/holiday-calculator.js';
-import DateDifferenceCalculator from '../scenes/date-difference-calculator.js';
-import FramerateCalculator from '../scenes/framerate-calculator.js';
-import TimeCalculator from '../scenes/time-calculator.js';
+import HolidayPayCalculator from '../scenes/holiday_calculator.js';
+import DateDifferenceCalculator from '../scenes/date_difference_calculator.js';
+import FramerateCalculator from '../scenes/framerate_calculator.js';
+import TimeCalculator from '../scenes/time_calculator.js';
 import Home from '../scenes/home.js';
 import History from './history.js';
 
@@ -44,10 +44,10 @@ class Main extends Component {
             <div className={mainClass}>
                 <div>
                     <Route path="/" component={Home} />
-                    <Route path="/holiday-pay-calculator" render={() => <HolidayPayCalculator onSubmit={this.updateHistory}/>} />
-                    <Route path="/date-difference-calculator" component={DateDifferenceCalculator} />
-                    <Route path="/framerate-calculator" render={() => <FramerateCalculator onSubmit={this.updateHistory} />} />
-                    <Route path="/time-calculator" component={TimeCalculator} />
+                    <Route path="/holiday_pay_calculator" render={() => <HolidayPayCalculator onSubmit={this.updateHistory}/>} />
+                    <Route path="/date_difference_calculator" component={DateDifferenceCalculator} />
+                    <Route path="/framerate_calculator" render={() => <FramerateCalculator onSubmit={this.updateHistory} />} />
+                    <Route path="/time_calculator" component={TimeCalculator} />
                 </div>
                 <div className={sideBarClass}>
                     <div className="sidebar-button-container">

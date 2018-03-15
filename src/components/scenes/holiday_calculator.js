@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FormItem from '../main/form.js';
-import { holPay } from '../logic/holiday-calc-logic.js'
+import { holPay } from '../logic/holiday_calc_logic.js'
 
 class HolidayPayCalculator extends Component {
     constructor(props){

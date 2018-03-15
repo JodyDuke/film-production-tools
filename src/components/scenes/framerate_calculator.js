@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
 import FormItem from '../main/form.js';
-import { frameCalc } from '../logic/framerate-calc-logic.js';
+import { frameCalc } from '../logic/framerate_calc_logic.js';
 
 class FramerateCalculator extends Component {
     constructor(props) {
