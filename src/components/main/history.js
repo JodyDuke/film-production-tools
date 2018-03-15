@@ -1,4 +1,5 @@
 import React from 'react';
+import Collapse from '../helpers/collapse'
 
 function History(props) {
         const data = props.historyData
@@ -11,15 +12,25 @@ function History(props) {
                     <div key={i} className="history-node green">
                         <h2>{data.name}</h2>
                         {date}
-                        <p className="collapsed">Input &#9658;</p>
+                        <Collapse hidden={true} name="Input" content={
+                            <div>
+                                <p>Days worked: {data.daysWorked}</p>
+                                <p>Weeks employed: {data.weeksEmployed}</p>
+                                <p>Pay rate: {data.payRate}</p>
+                                <p>Total holiday / year: {data.totalHol}</p>
+                                <p>Total holiday taken: {data.holTaken}</p>
+                                <p>Holiday rate: {data.rate}</p>
+                            </div>
+                        }/>
+                        <Collapse hidden={false} name="Output" content={
+                            <div>
+                                <p>Total pay: {data.totalPay}</p>
+                                <p>Total holiday for time worked: {data.holDaysOwed}</p>
+                                <p>Holiday remaining: {data.holDaysRemaining}</p>
+                                <p>Money owed: {data.moneyOwed}</p>
+                            </div>
+                        } />
 
-                        <p className="collapsed" onClick="">Output &#9660;</p>
-                        <div className={collapsible}>
-                            <p>Total pay: {data.totalPay}</p>
-                            <p>Total holiday for time worked: {data.holDaysOwed}</p>
-                            <p>Holiday remaining: {data.holDaysRemaining}</p>
-                            <p>Money owed: {data.moneyOwed}</p>
-                        </div>
                     </div>
                 )
             }
