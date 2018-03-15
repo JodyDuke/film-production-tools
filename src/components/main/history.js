@@ -37,7 +37,18 @@ function History(props) {
             else if(data.name === 'Framerate calculator') {
                 let formatElements = data.currentHistory.map((e, i) => <li key={i}>{e.hours} : {e.minutes} : {e.seconds} : {e.frames}</li>)
                 return (
-                    <div key={i} className="history-node red">
+                    <div key={i} className="history-node yellow">
+                        <h2>{data.name}</h2>
+                        {date}
+                        <ul>{formatElements}</ul>
+                        <p>{data.total}</p>
+                    </div>
+                )
+            }
+            else if(data.name === 'Time calculator') {
+                let formatElements = data.currentHistory.map((e, i) => <li key={i}>{e.hours} : {e.minutes} : {e.seconds}</li>)
+                return (
+                    <div key={i} className="history-node purple">
                         <h2>{data.name}</h2>
                         {date}
                         <ul>{formatElements}</ul>
