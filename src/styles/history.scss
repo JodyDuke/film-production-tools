@@ -29,6 +29,7 @@
 }
 
 .history {
+    @include text-sharpen;
     background-color: white;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -36,12 +37,27 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+
 .history-node {
     margin: 0px auto;
-    color: white;
+    color: $body-text;
     width: 80%;
     padding: 0px 10px;
-    background-color: $body-text;
+}
+
+.history-node :last-child {
+    padding-bottom: 1px;
+}
+
+.history-node h2 {
+    color: $body-text;
+    padding-top: 10px;
+    margin-bottom: 3px;
+}
+
+.history-node .history-node-date {
+    font-size: 80%;
+    margin-top: 0px;
 }
 
 .sidebar-button-container {

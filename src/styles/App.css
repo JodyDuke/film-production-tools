@@ -4,7 +4,8 @@ body {
   font-family: "Cantarell", sans-serif;
   font-size: 90%;
   color: #3D3A4B;
-  background: #fdfffc; }
+  background: #fdfffc;
+  overflow: hidden; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
@@ -16,6 +17,21 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #fdfffc;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 100vh; }
+
+.green {
+  background-color: #2ec4b6; }
+
+.red {
+  background-color: #e71d36; }
+
+.yellow {
+  background-color: #ff9f1c; }
+
+.blue {
+  background-color: #048ba8; }
+
+.purple {
+  background-color: #2e1f27; }
 
 .menu {
   display: grid;
@@ -33,6 +49,15 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 100%;
   letter-spacing: 2px;
   padding: 0px 10px 0px; }
+
+.menu h4 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fdfffc;
+  font-size: 70%;
+  letter-spacing: 2px;
+  padding: 0px 0px 0px 13px;
+  margin-top: -15px; }
 
 .logo {
   color: #fdfffc;
@@ -59,21 +84,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #fdfffc;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
-
-.green {
-  background-color: #2ec4b6; }
-
-.red {
-  background-color: #e71d36; }
-
-.yellow {
-  background-color: #ff9f1c; }
-
-.blue {
-  background-color: #048ba8; }
-
-.orange {
-  background-color: #2e1f27; }
 
 .active {
   color: #3D3A4B !important; }
@@ -119,6 +129,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: margin-left 0.3s, right 0.3s linear; }
 
 .history {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: white;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -127,10 +139,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .history-node {
   margin: 0px auto;
-  color: white;
+  color: #3D3A4B;
   width: 80%;
-  padding: 0px 10px;
-  background-color: #3D3A4B; }
+  padding: 0px 10px; }
+
+.history-node :last-child {
+  padding-bottom: 1px; }
+
+.history-node h2 {
+  color: #3D3A4B;
+  padding-top: 10px;
+  margin-bottom: 3px; }
+
+.history-node .history-node-date {
+  font-size: 80%;
+  margin-top: 0px; }
 
 .sidebar-button-container {
   text-align: center;
@@ -159,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   background-color: #ff9f1c;
   color: white;
-  padding: 5px 10px;
+  padding: 10px 10px;
   text-decoration: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -194,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   background-color: #048ba8;
   color: white;
-  padding: 5px 10px;
+  padding: 10px 10px;
   text-decoration: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -203,6 +226,9 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
   .clear-history button:active {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.collapse-header {
+  cursor: pointer; }
 
 .form-element {
   display: block;
