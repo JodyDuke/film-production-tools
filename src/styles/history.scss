@@ -37,6 +37,9 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+.history .history-node:last-child {
+    margin-bottom: 20px;
+}
 
 .history-node {
     margin: 0px auto;
@@ -46,18 +49,40 @@
 }
 
 .history-node :last-child {
-    padding-bottom: 1px;
+    padding-bottom: 3px;
 }
 
 .history-node h2 {
+    text-align: left;
     color: white;
     padding-top: 10px;
     margin-bottom: 3px;
 }
 
 .history-node .history-node-date {
+    text-align: left;
     font-size: 80%;
     margin-top: 0px;
+}
+
+.history-framerate, .history-time {
+    padding-bottom: 1px;
+    text-align: center;
+}
+
+.history-framerate ul, .history-time ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.history-framerate div, .history-time div {
+    display: inline-block;
+    margin-top: 8px;
+    text-align: center;
+    line-height: 0;
+    border-top: 1px solid white;
 }
 
 .sidebar-button-container {
