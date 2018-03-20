@@ -1,0 +1,16 @@
+.holiday-pay-calculator {
+  background-color: red;
+  display: grid;
+  grid-template-rows: 60px 1fr 1fr;
+  grid-template-columns: 1fr; }
+
+.holiday-pay-calculator .header {
+  width: 100%;
+  background-color: blue; }
+
+.holiday-pay-calculator .header button {
+  display: inline-block; }
+
+.holiday-pay-calculator h1 {
+  display: inline-block;
+  margin: 10px 0px 0px 0px; }
