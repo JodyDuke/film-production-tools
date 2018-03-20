@@ -17,6 +17,7 @@ class TimeCalculator extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.clear = this.clear.bind(this)
+        this.undo = this.undo.bind(this)
     }
 
     handleSubmit(e) {
@@ -57,6 +58,16 @@ class TimeCalculator extends Component {
         }
     }
 
+    undo() {
+        let history = this.state.currentHistory;
+        history.pop()
+        let timeTotal = timeCalc(history);
+        this.setState({
+            currentHistory: history,
+            total: timeTotal
+        })
+    }
+
     render() {
         const timeMap = this.state.currentHistory.map((data, i) => {
             return (
@@ -66,6 +77,7 @@ class TimeCalculator extends Component {
         return (
             <div>
                 <h1>Time Calculator</h1>
+                <button onClick={this.undo}>undo</button>
                 <button onClick={this.clear}>Clear</button>
                 <form onSubmit={this.handleSubmit}>
                     <FormItem className="form-element" type="number" name="hours" text="Hours: " value={this.state.hours} onChange={this.handleChange.bind(this)} />

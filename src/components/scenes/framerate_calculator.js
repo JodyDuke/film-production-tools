@@ -19,6 +19,7 @@ class FramerateCalculator extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.clear = this.clear.bind(this)
+        this.undo = this.undo.bind(this)
     }
 
     handleSubmit(e) {
@@ -44,6 +45,7 @@ class FramerateCalculator extends Component {
     }
 
     clear() {
+        console.log(this.state.currentHistory)
         if(this.state.currentHistory.length > 1) {
         this.setState({ timeStamp: new Date() }, () => {
             this.props.onSubmit(this.state)
@@ -60,6 +62,16 @@ class FramerateCalculator extends Component {
         }
     }
 
+    undo() {
+        let history = this.state.currentHistory;
+        history.pop()
+        let frameTotal = frameCalc(history, this.state.framerate);
+        this.setState({
+            currentHistory: history,
+            total: frameTotal
+        })
+    }
+
     render() {
         const timeMap = this.state.currentHistory.map((data, i) => {
             return (
@@ -69,6 +81,7 @@ class FramerateCalculator extends Component {
         return (
             <div>
             <h1>Framerate Calculator</h1>
+            <button onClick={this.undo}>Undo</button>
             <button onClick={this.clear}>Clear</button>
             <form onSubmit={this.handleSubmit}>
                     <FormItem className="form-element" type="number" name="framerate" text="Framerate: " value={this.state.framerate} onChange={this.handleChange.bind(this)} />
