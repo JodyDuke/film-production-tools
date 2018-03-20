@@ -17,6 +17,7 @@ class HolidayPayCalculator extends Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.clear = this.clear.bind(this)
     }
 
     handleChange(e){
@@ -38,20 +39,37 @@ class HolidayPayCalculator extends Component {
         }, () => this.props.onSubmit(this.state))          
     }
 
+    clear() {
+        this.setState({
+            moneyOwed : undefined,
+            holDaysOwed : undefined,
+            holDaysRemaining : undefined,
+            totalPay : undefined
+        })
+    }
+
 
     render(){
         return(
-            <div>
-                <h1>Holiday Pay Calculator</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <FormItem className="form-element" type="number" name="daysWorked" text="Days worked:" value={this.state.daysWorked} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="weeksEmployed" text="Weeks employed:" value={this.state.weeksEmployed} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="payRate" text="Pay rate:" value={this.state.payRate} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="totalHol" text="Total holiday:" value={this.state.totalHol} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="holTaken" text="Holiday taken:" value={this.state.holTaken} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="rate" text="Holiday rate:" value={this.state.rate} onChange={this.handleChange.bind(this)}/>
-                    <input type="submit" value="submit" />
-                </form>
+            <div className="holiday-pay-calculator">
+                <div className="header">
+                    <h1>Holiday Pay Calculator</h1>
+                    <div className="buttons">
+                        <button onClick={this.clear}>Clear</button>
+                    </div>                  
+                </div>  
+                <div className="input">
+                    <form onSubmit={this.handleSubmit}>
+                        <FormItem className="form-element" type="number" name="daysWorked" text="Days worked:" value={this.state.daysWorked} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="weeksEmployed" text="Weeks employed:" value={this.state.weeksEmployed} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="payRate" text="Pay rate:" value={this.state.payRate} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="totalHol" text="Total holiday:" value={this.state.totalHol} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="holTaken" text="Holiday taken:" value={this.state.holTaken} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="rate" text="Holiday rate:" value={this.state.rate} onChange={this.handleChange.bind(this)} />
+                        <input type="submit" value="submit" />
+                    </form>
+                </div>
+
 
                 <div>
                     <h3>Money owed: {this.state.moneyOwed}</h3>
