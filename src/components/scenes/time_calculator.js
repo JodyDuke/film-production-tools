@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FormItem from '../main/form.js';
 import { timeCalc } from '../logic/time_calc_logic.js'
+import { minTwoDigits } from "../helpers/two-digits.js";
 
 class TimeCalculator extends Component {
     constructor(props) {
@@ -70,8 +71,11 @@ class TimeCalculator extends Component {
 
     render() {
         const timeMap = this.state.currentHistory.map((data, i) => {
+            let hours = minTwoDigits(data.hours)
+            let minutes = minTwoDigits(data.minutes)
+            let seconds = minTwoDigits(data.seconds)
             return (
-                <p key={i}>{data.hours} : {data.minutes} : {data.seconds}</p>
+                <p key={i}>{hours} : {minutes} : {seconds}</p>
             )
         })
         return (

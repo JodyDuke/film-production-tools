@@ -1,3 +1,5 @@
+import { minTwoDigits } from "../helpers/two-digits";
+
 export const timeCalc = (props) => {
     let h = props.reduce((a, b) => (a + b.hours), 0)
     let m = props.reduce((a, b) => (a + b.minutes), 0)
@@ -15,5 +17,5 @@ export const timeCalc = (props) => {
         m = (m % 60)
     }
 
-    return h + ' : ' + m + ' : ' + s
+    return minTwoDigits(h) + ' : ' + minTwoDigits(m) + ' : ' + minTwoDigits(s)
 }

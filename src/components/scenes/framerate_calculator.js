@@ -1,6 +1,7 @@
 import React,{ Component } from "react";
 import FormItem from '../main/form.js';
 import { frameCalc } from '../logic/framerate_calc_logic.js';
+import { minTwoDigits } from '../helpers/two-digits.js';
 
 class FramerateCalculator extends Component {
     constructor(props) {
@@ -74,8 +75,12 @@ class FramerateCalculator extends Component {
 
     render() {
         const timeMap = this.state.currentHistory.map((data, i) => {
+            let hours = minTwoDigits(data.hours)
+            let minutes = minTwoDigits(data.minutes)
+            let seconds = minTwoDigits(data.seconds)
+            let frames = minTwoDigits(data.frames)
             return (
-                <p key={i}>{data.hours} : {data.minutes} : {data.seconds} : {data.frames}</p>
+                <p key={i}>{hours} : {minutes} : {seconds} : {frames}</p>
             )
     })
         return (

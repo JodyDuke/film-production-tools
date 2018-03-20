@@ -1,3 +1,5 @@
+import { minTwoDigits } from "../helpers/two-digits";
+
 export const frameCalc = (props, framerate) => {
     let h = props.reduce((a, b) => (a + b.hours), 0)
     let m = props.reduce((a, b) => (a + b.minutes), 0)
@@ -22,6 +24,6 @@ export const frameCalc = (props, framerate) => {
         m = (m % 60)
     }
 
-    return h + ' : ' + m + ' : ' + s + ' : ' + f
+    return minTwoDigits(h) + ' : ' + minTwoDigits(m) + ' : ' + minTwoDigits(s) + ' : ' + minTwoDigits(f)
 }
 

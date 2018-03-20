@@ -1,5 +1,6 @@
 import React from 'react';
 import Collapse from '../helpers/collapse'
+import { minTwoDigits } from '../helpers/two-digits';
 
 function History(props) {
         const data = props.historyData
@@ -35,24 +36,39 @@ function History(props) {
                 )
             }
             else if(data.name === 'Framerate calculator') {
-                let formatElements = data.currentHistory.map((e, i) => <li key={i}>{e.hours} : {e.minutes} : {e.seconds} : {e.frames}</li>)
+                let formatElements = data.currentHistory.map((e, i) => {
+                    let hours = minTwoDigits(e.hours)
+                    let minutes = minTwoDigits(e.minutes)
+                    let seconds = minTwoDigits(e.seconds)
+                    let frames = minTwoDigits(e.frames)
+                    return <li key={i}>{hours} : {minutes} : {seconds} : {frames}</li>
+                })
                 return (
-                    <div key={i} className="history-node yellow">
+                    <div key={i} className="history-node history-framerate yellow">
                         <h2>{data.name}</h2>
                         {date}
                         <ul>{formatElements}</ul>
-                        <p>{data.total}</p>
+                        <div>
+                            <p><b>{data.total}</b></p>
+                        </div>            
                     </div>
                 )
             }
             else if(data.name === 'Time calculator') {
-                let formatElements = data.currentHistory.map((e, i) => <li key={i}>{e.hours} : {e.minutes} : {e.seconds}</li>)
+                let formatElements = data.currentHistory.map((e, i) => {
+                let hours = minTwoDigits(e.hours)
+                let minutes = minTwoDigits(e.minutes)
+                let seconds = minTwoDigits(e.seconds)
+                return <li key={i}>{hours} : {minutes} : {seconds}</li>
+                })
                 return (
-                    <div key={i} className="history-node purple">
+                    <div key={i} className="history-node history-time purple">
                         <h2>{data.name}</h2>
                         {date}
                         <ul>{formatElements}</ul>
-                        <p>{data.total}</p>
+                        <div>
+                            <p><b>{data.total}</b></p>
+                        </div>       
                     </div>
                 )
             }
@@ -65,7 +81,7 @@ function History(props) {
                 <div className="clear-history">
                     <button onClick={props.historyWipe}>Clear all</button>
                 </div>
-                {string}
+                <div>{string}</div>
             </div> 
 
         )
