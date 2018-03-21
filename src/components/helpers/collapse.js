@@ -6,7 +6,6 @@ class Collapse extends Component {
         this.state = {
             isHidden : props.hidden
         }
-        console.log(props.hidden)
     }
 
     toggleHidden(){
