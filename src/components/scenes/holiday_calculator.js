@@ -51,14 +51,14 @@ class HolidayPayCalculator extends Component {
         })
     }
 
-
     render(){
+
         return(
-            <div className="holiday-pay-calculator">
+            <div className="calc-format">
                 <div className="header">
                     <h1>Holiday Pay Calculator</h1>
                     <div className="buttons">
-                        <button onClick={this.clear}>Clear</button>
+                        <button className="clear" onClick={this.clear}>Clear</button>
                     </div>                  
                 </div>  
                 <div className="holiday-input">
@@ -75,10 +75,7 @@ class HolidayPayCalculator extends Component {
 
 
                 <div>
-                    <h3>Money owed: {this.state.moneyOwed}</h3>
-                    <h3>Total holiday for time worked: {this.state.holDaysOwed}</h3>
-                    <h3>Holiday remaining: {this.state.holDaysRemaining}</h3>
-                    <h3>Total pay: {this.state.totalPay}</h3>
+                    {this.state.moneyOwed ? <h3>success</h3> : ''}
                 </div>
             </div>
         )

@@ -9,9 +9,9 @@ class TimeCalculator extends Component {
         this.state = {
             name: "Time calculator",
             currentHistory: [],
-            hours: 0,
-            minutes: 0,
-            seconds: 0,
+            hours: '',
+            minutes: '',
+            seconds: '',
             total: ''
         }
 
@@ -49,10 +49,9 @@ class TimeCalculator extends Component {
 
                 this.setState({
                     currentHistory: [],
-                    hours: 0,
-                    minutes: 0,
-                    seconds: 0,
-                    frames: 0,
+                    hours: '',
+                    minutes: '',
+                    seconds: '',
                     total: ''
                 })
             })
@@ -79,16 +78,22 @@ class TimeCalculator extends Component {
             )
         })
         return (
-            <div>
-                <h1>Time Calculator</h1>
-                <button onClick={this.undo}>undo</button>
-                <button onClick={this.clear}>Clear</button>
-                <form onSubmit={this.handleSubmit}>
-                    <FormItem className="form-element" type="number" name="hours" text="Hours: " value={this.state.hours} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="minutes" text="Minutes: " value={this.state.minutes} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="seconds" text="Seconds: " value={this.state.seconds} onChange={this.handleChange.bind(this)} />
-                    <input type="submit" value="submit" />
-                </form>
+            <div className="calc-format">
+                <div className="header">
+                    <h1>Time Calculator</h1>
+                    <div className="buttons">
+                        <button className="undo" onClick={this.undo}>Undo</button>
+                        <button className="clear" onClick={this.clear}>Clear</button>
+                    </div>
+                </div> 
+                <div className="time-input">
+                    <form onSubmit={this.handleSubmit}>
+                        <FormItem className="form-element" type="number" name="hours" text="Hours" placeHolder="0" value={this.state.hours} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="minutes" text="Minutes" placeHolder="0" value={this.state.minutes} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="seconds" text="Seconds" placeHolder="0" value={this.state.seconds} onChange={this.handleChange.bind(this)} />
+                        <input type="submit" value="submit" />
+                    </form>
+                </div>
                 <div>
                     {timeMap}
                     {this.state.total}

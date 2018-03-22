@@ -84,18 +84,24 @@ class FramerateCalculator extends Component {
             )
     })
         return (
-            <div>
-            <h1>Framerate Calculator</h1>
-            <button onClick={this.undo}>Undo</button>
-            <button onClick={this.clear}>Clear</button>
-            <form onSubmit={this.handleSubmit}>
-                    <FormItem className="form-element" type="number" name="framerate" text="Framerate: " value={this.state.framerate} onChange={this.handleChange.bind(this)} />
-                        <FormItem className="form-element" type="number" name="hours" text="Hours: " value={this.state.hours} onChange={this.handleChange.bind(this)} />
-                        <FormItem className="form-element" type="number" name="minutes" text="Minutes: " value={this.state.minutes} onChange={this.handleChange.bind(this)} />
-                        <FormItem className="form-element" type="number" name="seconds" text="Seconds: " value={this.state.seconds} onChange={this.handleChange.bind(this)} />
-                        <FormItem className="form-element" type="number" name="frames" text="Frames: " value={this.state.frames} onChange={this.handleChange.bind(this)} />
-                <input type="submit" value="submit" />
-            </form>
+            <div className="calc-format">
+                <div className="header">
+                    <h1>Framerate Calculator</h1>
+                    <div className="buttons">
+                        <button className="undo" onClick={this.undo}>Undo</button>
+                        <button className="clear" onClick={this.clear}>Clear</button>
+                    </div>
+                </div> 
+            <div className="framerate-input">
+                <form onSubmit={this.handleSubmit}>
+                    <FormItem className="form-element" type="number" name="framerate" text="Framerate" value={this.state.framerate} onChange={this.handleChange.bind(this)} />                        
+                    <FormItem className="form-element" type="number" name="hours" text="Hours" value={this.state.hours} onChange={this.handleChange.bind(this)} />
+                    <FormItem className="form-element" type="number" name="minutes" text="Minutes" value={this.state.minutes} onChange={this.handleChange.bind(this)} />
+                    <FormItem className="form-element" type="number" name="seconds" text="Seconds" value={this.state.seconds} onChange={this.handleChange.bind(this)} />
+                    <FormItem className="form-element" type="number" name="frames" text="Frames" value={this.state.frames} onChange={this.handleChange.bind(this)} />
+                    <input type="submit" value="submit" />
+                </form>
+            </div>
             <div>
                 {timeMap}
                 {this.state.total}
