@@ -1,28 +1,36 @@
-.holiday-pay-calculator {
+.calc-format {
     display: grid;
     grid-template-rows: 50px 1fr 1fr;
     grid-template-columns: auto;
 }
 
-.holiday-pay-calculator .header {
+.calc-format .header {
     width: 100%;
     display: flex;
 }
 
-.holiday-pay-calculator .header .buttons {
+.calc-format .header .buttons {
     display: inline-block;
     margin-left: auto;
 }
 
-.holiday-pay-calculator .header .buttons button{
+
+.calc-format .header .buttons .clear{
     @include button-reset;
-    @include button-style(red);
+    @include button-style($red);
     margin-left: auto;
     margin-right: 15px;
-
 }
 
-.holiday-pay-calculator h1 {
+.calc-format .header .buttons .undo{
+    @include button-reset;
+    @include button-style($green);
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+
+.calc-format h1 {
     display: inline-block;
     margin: 10px 0px 0px 0px;
     
