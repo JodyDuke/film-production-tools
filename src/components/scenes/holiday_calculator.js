@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FormItem from '../main/form.js';
-import { holPay } from '../logic/holiday_calc_logic.js'
+import { holPay } from '../logic/holiday_calc_logic.js';
+import HolidayResult from './results/holiday_calculator_results.js';
 
 class HolidayPayCalculator extends Component {
     constructor(props){
@@ -75,7 +76,7 @@ class HolidayPayCalculator extends Component {
 
 
                 <div>
-                    {this.state.moneyOwed ? <h3>success</h3> : ''}
+                    {this.state.moneyOwed ? <HolidayResult result={this.state.moneyOwed} data={[this.state.totalPay, this.state.holDaysOwed, this.state.holDaysRemaining]} /> : ''}
                 </div>
             </div>
         )
