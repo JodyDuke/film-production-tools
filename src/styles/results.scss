@@ -1,0 +1,18 @@
+.holiday-results {
+    margin: 5px auto;
+    width: 80%;
+    background-color: $green;
+    text-align: center;
+}
+
+.holiday-results .data {
+    display: inline-block;
+    width: 60%;
+}
+
+.holiday-results .result {
+    display: inline-block;
+    background-color: pink;
+    height: 100%;
+    width: 40%;
+}

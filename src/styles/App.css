@@ -254,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .calc-format {
   display: grid;
-  grid-template-rows: 50px 1fr 1fr;
+  grid-template-rows: 50px 1fr;
   grid-template-columns: auto; }
 
 .calc-format .header {
@@ -338,10 +338,11 @@ h1, h2, h3, h4, h5, h6 {
 .holiday-input form {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
   grid-template-rows: 1fr 1fr 75px;
   text-align: center;
-  padding: 50px; }
+  padding: 50px;
+  width: 100%; }
 
 .holiday-input input[type=submit], .time-input input[type=submit], .framerate-input input[input=submit] {
   grid-column: 2; }
@@ -441,6 +442,22 @@ input:focus:-ms-input-placeholder {
   color: transparent; }
 
 /* IE 10+ */
+.holiday-results {
+  margin: 5px auto;
+  width: 80%;
+  background-color: #2ec4b6;
+  text-align: center; }
+
+.holiday-results .data {
+  display: inline-block;
+  width: 60%; }
+
+.holiday-results .result {
+  display: inline-block;
+  background-color: pink;
+  height: 100%;
+  width: 40%; }
+
 .form-element {
   display: block;
   margin-top: 1em; }
