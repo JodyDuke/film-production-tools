@@ -1,10 +1,12 @@
 .holiday-input form{
+
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
     grid-template-rows: 1fr 1fr 75px;
     text-align: center;
     padding: 50px;
+    width: 100%;
 }
 
 .holiday-input input[type=submit], .time-input input[type=submit], .framerate-input input[input=submit] {

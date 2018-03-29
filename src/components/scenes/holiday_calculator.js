@@ -9,10 +9,10 @@ class HolidayPayCalculator extends Component {
         this.state = {
             name : 'Holiday pay calculator',
             daysWorked : 5,
-            weeksEmployed: '',
-            payRate : '',
+            weeksEmployed: 5,
+            payRate : 500,
             totalHol : 28,
-            holTaken : '',
+            holTaken : 2,
             rate : 10.77
 
         }
@@ -74,10 +74,8 @@ class HolidayPayCalculator extends Component {
                     </form>
                 </div>
 
-
-                <div>
                     {this.state.moneyOwed ? <HolidayResult result={this.state.moneyOwed} data={[this.state.totalPay, this.state.holDaysOwed, this.state.holDaysRemaining]} /> : ''}
-                </div>
+
             </div>
         )
     }

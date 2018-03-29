@@ -5,9 +5,13 @@ class HolidayResult extends Component {
         return (
             <div className="holiday-results">
                 <div className="data">
-                    {this.props.data[2]}
+                    <h3>Total pay: £{this.props.data[0]}</h3>
+                    <h3>Total holiday owed: {this.props.data[1]} days</h3>
+                    <h3>Holiday remaining: {this.props.data[2]} days</h3>
                 </div>
-                <div className="result">{this.props.result}</div>
+                <div className="result">
+                    <h3>Total owed: £{this.props.result}</h3>
+                </div>
             </div>
         )
     }
