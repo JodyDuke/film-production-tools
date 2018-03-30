@@ -2,6 +2,7 @@
     display: grid;
     grid-template-rows: 50px 1fr;
     grid-template-columns: auto;
+    overflow: scroll !important;
 }
 
 .calc-format .header {
@@ -12,6 +13,8 @@
 .calc-format .header .buttons {
     display: inline-block;
     margin-left: auto;
+    text-align: right;
+    min-width: 150px;
 }
 
 

@@ -1,5 +1,4 @@
 .holiday-input form{
-
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
@@ -19,6 +18,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 75px;
     text-align: center;
+    margin-top: 30px;
     padding: 50px;
 }
 
@@ -31,6 +31,7 @@ input[type=number]::-webkit-input-placeholder {
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 75px;
+    margin-top: 30px;
     text-align: center;
     padding: 50px;
 }
@@ -69,6 +70,23 @@ label {
 
 label i {
     padding-bottom: 10px;
+}
+
+.form-element {
+    display: block;
+    margin-top: 1em;
+}
+
+.header-form-element {
+    font-family: $header-font;
+    display: inline-block;
+    font-size: 50%;
+    width: 10%;
+}
+
+.header-form-element input {
+    font-family: $header-font;    
+    color: $body-text;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
