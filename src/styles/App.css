@@ -255,7 +255,8 @@ h1, h2, h3, h4, h5, h6 {
 .calc-format {
   display: grid;
   grid-template-rows: 50px 1fr;
-  grid-template-columns: auto; }
+  grid-template-columns: auto;
+  overflow: scroll !important; }
 
 .calc-format .header {
   width: 100%;
@@ -263,7 +264,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .calc-format .header .buttons {
   display: inline-block;
-  margin-left: auto; }
+  margin-left: auto;
+  text-align: right;
+  min-width: 150px; }
 
 .calc-format .header .buttons .clear {
   border: none;
@@ -353,6 +356,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 75px;
   text-align: center;
+  margin-top: 30px;
   padding: 50px; }
 
 input[type=number]::-webkit-input-placeholder {
@@ -363,6 +367,7 @@ input[type=number]::-webkit-input-placeholder {
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 75px;
+  margin-top: 30px;
   text-align: center;
   padding: 50px; }
 
@@ -422,6 +427,20 @@ label {
 label i {
   padding-bottom: 10px; }
 
+.form-element {
+  display: block;
+  margin-top: 1em; }
+
+.header-form-element {
+  font-family: "Raleway", sans-serif;
+  display: inline-block;
+  font-size: 50%;
+  width: 10%; }
+
+.header-form-element input {
+  font-family: "Raleway", sans-serif;
+  color: #3D3A4B; }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -443,21 +462,39 @@ input:focus:-ms-input-placeholder {
 
 /* IE 10+ */
 .holiday-results {
+  position: relative;
+  clear: both;
   margin: 5px auto;
-  width: 80%;
-  background-color: #2ec4b6;
+  width: 100%;
   text-align: center; }
 
 .holiday-results .data {
+  position: relative;
   display: inline-block;
-  width: 60%; }
+  width: 150px;
+  height: 120px;
+  margin: 10px;
+  padding: 0px 5px;
+  clear: both;
+  background-color: #ff9f1c; }
 
 .holiday-results .result {
+  position: relative;
   display: inline-block;
-  background-color: pink;
-  height: 100%;
-  width: 40%; }
+  margin: 10px;
+  padding: 0px 5px;
+  width: 150px;
+  height: 120px;
+  clear: both;
+  background-color: #2ec4b6; }
 
-.form-element {
-  display: block;
-  margin-top: 1em; }
+.holiday-results div h2 {
+  font-family: "Cantarell", sans-serif;
+  position: inherit;
+  margin: 25px auto 0px auto; }
+
+.holiday-results div h3 {
+  font-family: "Cantarell", sans-serif;
+  color: white;
+  position: inherit;
+  margin: 0px auto; }
