@@ -10,10 +10,10 @@ class FramerateCalculator extends Component {
             name : "Framerate calculator",
             currentHistory : [],
             framerate : 25,
-            hours : 0,
-            minutes : 0,
-            seconds : 0,
-            frames : 0,
+            hours : '',
+            minutes : '',
+            seconds : '',
+            frames : '',
             total : ''
         }
 
@@ -39,6 +39,7 @@ class FramerateCalculator extends Component {
             currentHistory : newHistory,
             total : frameTotal
         })
+        console.log(this.state.framerate)
     }
 
     handleChange(e) {
@@ -46,17 +47,16 @@ class FramerateCalculator extends Component {
     }
 
     clear() {
-        console.log(this.state.currentHistory)
-        if(this.state.currentHistory.length > 1) {
+        if(this.state.currentHistory.length > 0) {
         this.setState({ timeStamp: new Date() }, () => {
             this.props.onSubmit(this.state)
         
             this.setState({
                 currentHistory : [],
-                hours : 0,
-                minutes : 0,
-                seconds : 0,
-                frames : 0,
+                hours : '',
+                minutes : '',
+                seconds : '',
+                frames : '',
                 total : ''
             })
         })
@@ -86,7 +86,7 @@ class FramerateCalculator extends Component {
         return (
             <div className="calc-format">
                 <div className="header">
-                    <h1>Framerate Calculator</h1>
+                    <h1><FormItem className="header-form-element" type="number" name="framerate" value={this.state.framerate} onChange={this.handleChange.bind(this)} /> Framerate Calculator</h1>
                     <div className="buttons">
                         <button className="undo" onClick={this.undo}>Undo</button>
                         <button className="clear" onClick={this.clear}>Clear</button>
@@ -94,11 +94,10 @@ class FramerateCalculator extends Component {
                 </div> 
             <div className="framerate-input">
                 <form onSubmit={this.handleSubmit}>
-                    <FormItem className="form-element" type="number" name="framerate" text="Framerate" value={this.state.framerate} onChange={this.handleChange.bind(this)} />                        
-                    <FormItem className="form-element" type="number" name="hours" text="Hours" value={this.state.hours} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="minutes" text="Minutes" value={this.state.minutes} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="seconds" text="Seconds" value={this.state.seconds} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="frames" text="Frames" value={this.state.frames} onChange={this.handleChange.bind(this)} />
+                    <FormItem className="form-element" type="number" name="hours" text="Hours" placeHolder='0' value={this.state.hours} onChange={this.handleChange.bind(this)} />
+                    <FormItem className="form-element" type="number" name="minutes" text="Minutes" placeHolder='0' value={this.state.minutes} onChange={this.handleChange.bind(this)} />
+                    <FormItem className="form-element" type="number" name="seconds" text="Seconds" placeHolder='0' value={this.state.seconds} onChange={this.handleChange.bind(this)} />
+                    <FormItem className="form-element" type="number" name="frames" text="Frames" placeHolder='0' value={this.state.frames} onChange={this.handleChange.bind(this)} />
                     <input type="submit" value="submit" />
                 </form>
             </div>
