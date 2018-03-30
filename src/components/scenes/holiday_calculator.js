@@ -8,11 +8,11 @@ class HolidayPayCalculator extends Component {
         super(props);
         this.state = {
             name : 'Holiday pay calculator',
-            daysWorked : 5,
-            weeksEmployed: 5,
-            payRate : 500,
+            daysWorked : '',
+            weeksEmployed: '',
+            payRate : '',
             totalHol : 28,
-            holTaken : 2,
+            holTaken : '',
             rate : 10.77
 
         }
@@ -64,7 +64,7 @@ class HolidayPayCalculator extends Component {
                 </div>  
                 <div className="holiday-input">
                     <form onSubmit={this.handleSubmit}>
-                        <FormItem className="form-element" type="number" name="daysWorked" text="Days worked per week" faIcon="fa fa-calendar-check-o" value={this.state.daysWorked} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="daysWorked" text="Days worked per week" faIcon="fa fa-calendar-check-o" placeHolder="e.g. 5 (a full week)" value={this.state.daysWorked} onChange={this.handleChange.bind(this)} />
                         <FormItem className="form-element" type="number" name="weeksEmployed" text="Weeks employed" faIcon="fa fa-calendar" placeHolder="e.g. 5" value={this.state.weeksEmployed} onChange={this.handleChange.bind(this)} />
                         <FormItem className="form-element" type="number" name="payRate" text="Pay rate (£)" faIcon="fa fa-money" placeHolder="e.g. 500" value={this.state.payRate} onChange={this.handleChange.bind(this)} />
                         <FormItem className="form-element" type="number" name="totalHol" text="Total holiday" faIcon="fa fa-pie-chart" value={this.state.totalHol} onChange={this.handleChange.bind(this)} />
