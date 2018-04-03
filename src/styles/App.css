@@ -255,8 +255,7 @@ h1, h2, h3, h4, h5, h6 {
 .calc-format {
   display: grid;
   grid-template-rows: 50px 1fr;
-  grid-template-columns: auto;
-  overflow: scroll !important; }
+  grid-template-columns: auto; }
 
 .calc-format .header {
   width: 100%;
@@ -353,11 +352,12 @@ h1, h2, h3, h4, h5, h6 {
 .time-input form {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
   grid-template-rows: 1fr 75px;
   text-align: center;
-  margin-top: 30px;
-  padding: 50px; }
+  margin: 30px auto 0px auto;
+  padding: 40px;
+  width: 100%; }
 
 input[type=number]::-webkit-input-placeholder {
   font-size: 80%; }
@@ -367,6 +367,7 @@ input[type=number]::-webkit-input-placeholder {
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 75px;
+  width: 100%;
   margin-top: 30px;
   text-align: center;
   padding: 50px; }
@@ -471,7 +472,7 @@ input:focus:-ms-input-placeholder {
 .holiday-results .data {
   position: relative;
   display: inline-block;
-  width: 150px;
+  min-width: 170px;
   height: 120px;
   margin: 10px;
   padding: 0px 5px;
@@ -483,7 +484,7 @@ input:focus:-ms-input-placeholder {
   display: inline-block;
   margin: 10px;
   padding: 0px 5px;
-  width: 150px;
+  min-width: 170px;
   height: 120px;
   clear: both;
   background-color: #2ec4b6; }
@@ -494,6 +495,50 @@ input:focus:-ms-input-placeholder {
   margin: 25px auto 0px auto; }
 
 .holiday-results div h3 {
+  font-family: "Cantarell", sans-serif;
+  color: white;
+  position: inherit;
+  margin: 0px auto; }
+
+.time-frame-results {
+  margin: 5px auto;
+  width: 100%;
+  text-align: center; }
+
+.time-frame-results .data {
+  display: inline-block;
+  min-width: 170px;
+  height: auto;
+  min-height: 120px;
+  margin: 10px;
+  padding: 0px 5px;
+  clear: both;
+  background-color: #ff9f1c;
+  overflow: auto; }
+
+.time-frame-results .data p {
+  font-family: "Cantarell", sans-serif;
+  position: inherit;
+  margin: 10px auto 10px auto;
+  color: white; }
+
+.time-frame-results .result {
+  display: inline-block;
+  margin: 10px;
+  padding: 0px 5px;
+  min-width: 170px;
+  height: 120px;
+  clear: both;
+  background-color: #2ec4b6;
+  overflow: auto;
+  vertical-align: top; }
+
+.time-frame-results div h2 {
+  font-family: "Cantarell", sans-serif;
+  position: inherit;
+  margin: 30px auto 0px auto; }
+
+.time-frame-results div h3 {
   font-family: "Cantarell", sans-serif;
   color: white;
   position: inherit;
