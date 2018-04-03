@@ -1,5 +1,6 @@
 import React,{ Component } from "react";
 import FormItem from '../main/form.js';
+import TimeAndFrameResults from './results/time_calculator_results.js'
 import { frameCalc } from '../logic/framerate_calc_logic.js';
 import { minTwoDigits } from '../helpers/two-digits.js';
 
@@ -27,10 +28,10 @@ class FramerateCalculator extends Component {
         e.preventDefault();
         let newHistory = this.state.currentHistory;
         newHistory.push({
-            hours : parseInt(this.state.hours, 10),
-            minutes : parseInt(this.state.minutes, 10),
-            seconds : parseInt(this.state.seconds, 10),
-            frames : parseInt(this.state.frames, 10)
+            hours : this.state.hours ? parseInt(this.state.hours, 10) : 0,
+            minutes : this.state.minutes ? parseInt(this.state.minutes, 10) : 0,
+            seconds : this.state.seconds ? parseInt(this.state.seconds, 10) : 0,
+            frames : this.state.frames ? parseInt(this.state.frames, 10) : 0
         })
 
         let frameTotal = frameCalc(newHistory, this.state.framerate);
@@ -101,10 +102,9 @@ class FramerateCalculator extends Component {
                     <input type="submit" value="submit" />
                 </form>
             </div>
-            <div>
-                {timeMap}
-                {this.state.total}
-            </div>
+
+            {this.state.total ? <TimeAndFrameResults times={timeMap} result={this.state.total} /> : ''}
+
             </div>
         )
     }

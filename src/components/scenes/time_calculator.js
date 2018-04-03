@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FormItem from '../main/form.js';
+import TimeAndFrameResults from './results/time_calculator_results.js';
 import { timeCalc } from '../logic/time_calc_logic.js'
 import { minTwoDigits } from "../helpers/two-digits.js";
 
@@ -22,19 +23,23 @@ class TimeCalculator extends Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault();     
         let newHistory = this.state.currentHistory;
+
         newHistory.push({
-            hours: parseInt(this.state.hours, 10),
-            minutes: parseInt(this.state.minutes, 10),
-            seconds: parseInt(this.state.seconds, 10),
+            hours: this.state.hours ? parseInt(this.state.hours, 10) : 0,
+            minutes: this.state.minutes ? parseInt(this.state.minutes, 10) : 0,
+            seconds: this.state.seconds ? parseInt(this.state.seconds, 10) : 0
         })
 
         let timeTotal = timeCalc(newHistory);
 
         this.setState({
             currentHistory: newHistory,
-            total: timeTotal
+            total: timeTotal,
+            hours: '',
+            minutes: '',
+            seconds: ''
         })
     }
 
@@ -43,7 +48,7 @@ class TimeCalculator extends Component {
     }
 
     clear() {
-        if (this.state.currentHistory.length > 1) {
+        if (this.state.currentHistory.length >= 1) {
             this.setState({ timeStamp: new Date() }, () => {
                 this.props.onSubmit(this.state)
 
@@ -91,13 +96,12 @@ class TimeCalculator extends Component {
                         <FormItem className="form-element" type="number" name="hours" text="Hours" placeHolder="0" value={this.state.hours} onChange={this.handleChange.bind(this)} />
                         <FormItem className="form-element" type="number" name="minutes" text="Minutes" placeHolder="0" value={this.state.minutes} onChange={this.handleChange.bind(this)} />
                         <FormItem className="form-element" type="number" name="seconds" text="Seconds" placeHolder="0" value={this.state.seconds} onChange={this.handleChange.bind(this)} />
-                        <input type="submit" value="submit" />
+                        <input type="submit" value="Calculate" />
                     </form>
                 </div>
-                <div>
-                    {timeMap}
-                    {this.state.total}
-                </div>
+
+                {this.state.total ? <TimeAndFrameResults times={timeMap} result={this.state.total} /> : ''}
+                
             </div>
         )
     }
