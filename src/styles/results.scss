@@ -1,3 +1,5 @@
+//Holiday Pay Calculator Results SCSS
+
 .holiday-results {
     position: relative;
     clear: both;
@@ -9,7 +11,7 @@
 .holiday-results .data {
     position: relative;
     display: inline-block;
-    width: 150px;
+    min-width: 170px;
     height: 120px;
     margin: 10px;
     padding: 0px 5px;
@@ -22,7 +24,7 @@
     display: inline-block;
     margin: 10px;
     padding: 0px 5px;
-    width: 150px;
+    min-width: 170px;
     height: 120px;
     clear: both;
     background-color: $green;
@@ -35,6 +37,58 @@
 }
 
 .holiday-results div h3 {
+    font-family: $body-font;
+    color: white;
+    position: inherit;
+    margin: 0px auto;
+}
+
+//Time & Framerate Calculator Results SCSS
+
+.time-frame-results {
+    margin: 5px auto;
+    width: 100%;
+    text-align: center; 
+}
+
+.time-frame-results .data {
+    display: inline-block;
+    min-width: 170px;
+    height: auto;
+    min-height: 120px;
+    margin: 10px;
+    padding: 0px 5px;
+    clear: both;
+    background-color: $yellow;  
+    overflow: auto; 
+}
+
+.time-frame-results .data p {
+    font-family: $body-font;
+    position: inherit;
+    margin: 10px auto 10px auto;
+    color: white;
+}
+
+.time-frame-results .result {
+    display: inline-block;
+    margin: 10px;
+    padding: 0px 5px;
+    min-width: 170px;
+    height: 120px;
+    clear: both;
+    background-color: $green;
+    overflow: auto;
+    vertical-align: top;
+}
+
+.time-frame-results div h2 {
+    font-family: $body-font;
+    position: inherit;
+    margin: 30px auto 0px auto;
+}
+
+.time-frame-results div h3 {
     font-family: $body-font;
     color: white;
     position: inherit;
