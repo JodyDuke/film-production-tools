@@ -99,7 +99,7 @@ class FramerateCalculator extends Component {
                     <FormItem className="form-element" type="number" name="minutes" text="Minutes" placeHolder='0' value={this.state.minutes} onChange={this.handleChange.bind(this)} />
                     <FormItem className="form-element" type="number" name="seconds" text="Seconds" placeHolder='0' value={this.state.seconds} onChange={this.handleChange.bind(this)} />
                     <FormItem className="form-element" type="number" name="frames" text="Frames" placeHolder='0' value={this.state.frames} onChange={this.handleChange.bind(this)} />
-                    <input type="submit" value="submit" />
+                    <input type="submit" value="Calculate" />
                 </form>
             </div>
 

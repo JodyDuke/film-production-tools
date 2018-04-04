@@ -346,7 +346,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 50px;
   width: 100%; }
 
-.holiday-input input[type=submit], .time-input input[type=submit], .framerate-input input[input=submit] {
+.holiday-input input[type=submit], .time-input input[type=submit] {
   grid-column: 2; }
 
 .time-input form {
@@ -365,12 +365,20 @@ input[type=number]::-webkit-input-placeholder {
 .framerate-input form {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr 75px;
   width: 100%;
   margin-top: 30px;
   text-align: center;
   padding: 50px; }
+
+.framerate-input .form-element {
+  grid-column: span 3; }
+
+.framerate-input input[type=submit] {
+  grid-column: span 4;
+  grid-column-start: 5;
+  grid-column-end: 9; }
 
 input[type=number] {
   display: block;
