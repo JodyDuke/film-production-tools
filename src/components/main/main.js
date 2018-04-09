@@ -45,7 +45,7 @@ class Main extends Component {
                 <div>
                     <Route path="/" component={Home} />
                     <Route path="/holiday_pay_calculator" render={() => <HolidayPayCalculator onSubmit={this.updateHistory}/>} />
-                    <Route path="/date_difference_calculator" component={DateDifferenceCalculator} />
+                    <Route path="/date_difference_calculator" render={() => <DateDifferenceCalculator onSubmit={this.updateHistory}/>} />
                     <Route path="/framerate_calculator" render={() => <FramerateCalculator onSubmit={this.updateHistory} />} />
                     <Route path="/time_calculator" render={() => <TimeCalculator onSubmit={this.updateHistory} />} />
                 </div>

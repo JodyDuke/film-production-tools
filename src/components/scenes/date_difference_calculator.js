@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import FormItem from '../main/form.js';
 import { dateDiff } from '../logic/date_difference_logic';
 import DateResult from './results/date_calculator_results';
+import InfoBox from '../main/info-box.js';
 
 class DateDifferenceCalculator extends Component {
     constructor(props) {
@@ -30,8 +31,9 @@ class DateDifferenceCalculator extends Component {
         e.preventDefault();
         let result = dateDiff(this.state.start, this.state.end)
         this.setState({
-            total : result
-        })
+            total : result,
+            timeStamp: new Date()
+        }, () => this.props.onSubmit(this.state))
     }
 
     handleChange(e) {
@@ -43,12 +45,11 @@ class DateDifferenceCalculator extends Component {
             <div className="calc-format">
                 <div className="header">
                     <h1>Date Difference Calculator</h1>
+                    <InfoBox text="The date difference calculator will provide you with the amount of working days between two dates. 
+                    A week is 5 days and each day is counted as 0.2. The result will be a decimal number." />
                     <div className="buttons">
                         <button className="clear" onClick={this.clear}>Clear</button>
                     </div>
-                </div>
-                <div className="infoBox">
-                    <p>blah blah blah</p>
                 </div>
                 <div className="date-input">
                     <form onSubmit={this.handleSubmit}>
