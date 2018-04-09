@@ -40,7 +40,6 @@ class FramerateCalculator extends Component {
             currentHistory : newHistory,
             total : frameTotal
         })
-        console.log(this.state.framerate)
     }
 
     handleChange(e) {
