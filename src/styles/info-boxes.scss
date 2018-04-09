@@ -1,0 +1,31 @@
+// .info-box {
+//     background-color: $green;
+//     margin: 20px auto;
+//     padding: 0px 10px;
+//     width: 80%;
+//     color: white;
+// }
+
+.info-container {
+    margin-left: 10px;
+}
+
+p.info-container:hover .info-box{
+    display:block;
+}
+
+.info-box{
+    background: $green;
+    color: white;
+    letter-spacing: 1px;
+    position: absolute;
+    text-align: center;
+    width: 50vw;
+    top: 10px;
+    left: 210px;
+    display:none;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    
+}
+

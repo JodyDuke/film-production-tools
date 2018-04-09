@@ -3,6 +3,8 @@ import FormItem from '../main/form.js';
 import TimeAndFrameResults from './results/time_calculator_results.js'
 import { frameCalc } from '../logic/framerate_calc_logic.js';
 import { minTwoDigits } from '../helpers/two-digits.js';
+import InfoBox from '../main/info-box.js';
+
 
 class FramerateCalculator extends Component {
     constructor(props) {
@@ -86,23 +88,28 @@ class FramerateCalculator extends Component {
         return (
             <div className="calc-format">
                 <div className="header">
-                    <h1><FormItem className="header-form-element" type="number" name="framerate" value={this.state.framerate} onChange={this.handleChange.bind(this)} /> Framerate Calculator</h1>
+                    <h1>Framerate Calculator</h1>
+                    <InfoBox text="The framerate calculator will add together a list of times and framerates to give a total. You can change the framerate using the input box on the left." />
                     <div className="buttons">
                         <button className="undo" onClick={this.undo}>Undo</button>
                         <button className="clear" onClick={this.clear}>Clear</button>
                     </div>
+                     
                 </div> 
-            <div className="framerate-input">
-                <form onSubmit={this.handleSubmit}>
-                    <FormItem className="form-element" type="number" name="hours" text="Hours" placeHolder='0' value={this.state.hours} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="minutes" text="Minutes" placeHolder='0' value={this.state.minutes} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="seconds" text="Seconds" placeHolder='0' value={this.state.seconds} onChange={this.handleChange.bind(this)} />
-                    <FormItem className="form-element" type="number" name="frames" text="Frames" placeHolder='0' value={this.state.frames} onChange={this.handleChange.bind(this)} />
-                    <input type="submit" value="Calculate" />
-                </form>
-            </div>
 
-            {this.state.total ? <TimeAndFrameResults times={timeMap} result={this.state.total} /> : ''}
+                <FormItem className="header-form-element" type="number" name="framerate" value={this.state.framerate} onChange={this.handleChange.bind(this)} />
+
+                <div className="framerate-input">
+                    <form onSubmit={this.handleSubmit}>
+                        <FormItem className="form-element" type="number" name="hours" text="Hours" placeHolder='0' value={this.state.hours} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="minutes" text="Minutes" placeHolder='0' value={this.state.minutes} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="seconds" text="Seconds" placeHolder='0' value={this.state.seconds} onChange={this.handleChange.bind(this)} />
+                        <FormItem className="form-element" type="number" name="frames" text="Frames" placeHolder='0' value={this.state.frames} onChange={this.handleChange.bind(this)} />
+                        <input type="submit" value="Calculate" />
+                    </form>
+                </div>
+
+                {this.state.total ? <TimeAndFrameResults times={timeMap} result={this.state.total} /> : ''}
 
             </div>
         )

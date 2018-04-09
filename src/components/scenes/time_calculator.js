@@ -3,6 +3,8 @@ import FormItem from '../main/form.js';
 import TimeAndFrameResults from './results/time_calculator_results.js';
 import { timeCalc } from '../logic/time_calc_logic.js'
 import { minTwoDigits } from "../helpers/two-digits.js";
+import InfoBox from '../main/info-box.js';
+
 
 class TimeCalculator extends Component {
     constructor(props) {
@@ -84,13 +86,16 @@ class TimeCalculator extends Component {
         })
         return (
             <div className="calc-format">
+
                 <div className="header">
                     <h1>Time Calculator</h1>
+                    <InfoBox text="The time calculator gives the total amount of time based on a list of time inputs." />
                     <div className="buttons">
                         <button className="undo" onClick={this.undo}>Undo</button>
                         <button className="clear" onClick={this.clear}>Clear</button>
                     </div>
                 </div> 
+                
                 <div className="time-input">
                     <form onSubmit={this.handleSubmit}>
                         <FormItem className="form-element" type="number" name="hours" text="Hours" placeHolder="0" value={this.state.hours} onChange={this.handleChange.bind(this)} />

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import FormItem from '../main/form.js';
 import { holPay } from '../logic/holiday_calc_logic.js';
 import HolidayResult from './results/holiday_calculator_results.js';
+import InfoBox from '../main/info-box.js';
+
 
 class HolidayPayCalculator extends Component {
     constructor(props){
@@ -58,6 +60,7 @@ class HolidayPayCalculator extends Component {
             <div className="calc-format">
                 <div className="header">
                     <h1>Holiday Pay Calculator</h1>
+                    <InfoBox text="The holiday pay calculator outputs how much holiday pay is owed depending on the variables listed below. It also outputs total holiday owed and holiday remaining." />
                     <div className="buttons">
                         <button className="clear" onClick={this.clear}>Clear</button>
                     </div>                  
