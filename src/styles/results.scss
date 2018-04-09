@@ -94,3 +94,29 @@
     position: inherit;
     margin: 0px auto;
 }
+
+//Date results SCSS
+
+.date-results {
+    margin: 5px auto;
+    width: 100%;
+    text-align: center; 
+}
+
+.date-results .result {
+    display: inline-block;
+    margin: 10px;
+    padding: 0px 5px;
+    min-width: 170px;
+    height: 80px;
+    clear: both;
+    background-color: $green;
+    overflow: auto;
+    vertical-align: top;
+}
+
+.date-results div h2 {
+    font-family: $body-font;
+    position: inherit;
+    margin: 20px auto 0px auto;
+}

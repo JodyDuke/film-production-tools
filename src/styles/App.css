@@ -380,7 +380,31 @@ input[type=number]::-webkit-input-placeholder {
   grid-column-start: 5;
   grid-column-end: 9; }
 
-input[type=number] {
+.date-input form {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 75px;
+  max-width: 100%;
+  margin-top: 30px;
+  text-align: center;
+  padding: 50px; }
+
+.date-input .form-element {
+  grid-column: span 4;
+  width: 100%; }
+
+.date-input .form-element:first-child {
+  grid-column-start: 3;
+  grid-column-end: 7; }
+
+.date-input input[type=submit] {
+  grid-column: span 4;
+  grid-column-start: 5;
+  grid-column-end: 9;
+  width: 100%; }
+
+input[type=number], input[type=date] {
   display: block;
   width: 100%;
   font-size: 200%;
@@ -452,6 +476,11 @@ label i {
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
@@ -551,3 +580,24 @@ input:focus:-ms-input-placeholder {
   color: white;
   position: inherit;
   margin: 0px auto; }
+
+.date-results {
+  margin: 5px auto;
+  width: 100%;
+  text-align: center; }
+
+.date-results .result {
+  display: inline-block;
+  margin: 10px;
+  padding: 0px 5px;
+  min-width: 170px;
+  height: 80px;
+  clear: both;
+  background-color: #2ec4b6;
+  overflow: auto;
+  vertical-align: top; }
+
+.date-results div h2 {
+  font-family: "Cantarell", sans-serif;
+  position: inherit;
+  margin: 20px auto 0px auto; }
