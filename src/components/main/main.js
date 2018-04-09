@@ -43,7 +43,7 @@ class Main extends Component {
         return (
             <div className={mainClass}>
                 <div>
-                    <Route path="/" component={Home} />
+                    <Route exact path="/" component={Home} />
                     <Route path="/holiday_pay_calculator" render={() => <HolidayPayCalculator onSubmit={this.updateHistory}/>} />
                     <Route path="/date_difference_calculator" render={() => <DateDifferenceCalculator onSubmit={this.updateHistory}/>} />
                     <Route path="/framerate_calculator" render={() => <FramerateCalculator onSubmit={this.updateHistory} />} />
