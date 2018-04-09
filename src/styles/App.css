@@ -1,3 +1,10 @@
+.intro {
+  background-color: #048ba8;
+  color: white;
+  padding: 10px 20px;
+  width: 80%;
+  margin: 10px auto; }
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -609,7 +616,7 @@ p.info-container:hover .info-box {
   display: block; }
 
 .info-box {
-  background: #2ec4b6;
+  background: #048ba8;
   color: white;
   letter-spacing: 1px;
   position: absolute;
