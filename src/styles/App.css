@@ -386,7 +386,7 @@ input[type=number]::-webkit-input-placeholder {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr 75px;
   max-width: 100%;
-  margin-top: 30px;
+  margin-top: 0px;
   text-align: center;
   padding: 50px; }
 
@@ -601,3 +601,22 @@ input:focus:-ms-input-placeholder {
   font-family: "Cantarell", sans-serif;
   position: inherit;
   margin: 20px auto 0px auto; }
+
+.info-container {
+  margin-left: 10px; }
+
+p.info-container:hover .info-box {
+  display: block; }
+
+.info-box {
+  background: #2ec4b6;
+  color: white;
+  letter-spacing: 1px;
+  position: absolute;
+  text-align: center;
+  width: 50vw;
+  top: 10px;
+  left: 210px;
+  display: none;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
