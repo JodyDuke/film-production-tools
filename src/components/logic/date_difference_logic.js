@@ -1,39 +1,31 @@
-//Math for making time in ms into days
-const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+import { round } from "../helpers/round.js";
 
+export const dateDiff = (a, b) => {
+    let result = 0;
+    let startDate = new Date(a);
+    let endDate = new Date(b);
 
-//Function for calculating time between two dates
-function dateCalculator(a, b) {
-    // Discard the time and time-zone information.
-    var utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
-    var utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+    if(startDate <= endDate) {
+        while (startDate.toDateString() !== endDate.toDateString()) {
 
-    return Math.floor((utc2 - utc1) / _MS_PER_DAY);
-}
+        if (startDate.getDay() > 0 && startDate.getDay() <= 5) {
+            result += 0.2
+        }
 
-//Function to format into weeks with decimal point
-function dateDiff(a, b) {
+        startDate.setTime(startDate.getTime() + 1 * 86400000)
+        }
 
-    var startDate = new Date(a.val())
-    var endDate = new Date(b.val())
+        if (startDate.getDay() > 0 && startDate.getDay() <= 5) {
+            result += 0.2
+        }
 
-    var date = dateCalculator(startDate, endDate);
+        return round(result, 1) + ' weeks';
 
-    var weeks = Math.floor(date / 7);
-    var days = date % 7;
-
-    var result = "";
-
-    if (days >= 5) {
-        result = weeks += 1;
     }
+
     else {
-        days = ((days / 10) * 2) * 10;
-        result = weeks + "." + days;
-    }
-
-    return result
+        console.log('End date must be after start date')
+    }   
 
 }
 
-export default dateDiff
