@@ -72,6 +72,19 @@ function History(props) {
                     </div>
                 )
             }
+            else if(data.name === 'Date difference calculator') {
+               return (
+                    <div key={i} className="history-node history-time red">
+                        <h2>{data.name}</h2>
+                        {date}
+                        <ul>Start date: {data.start}</ul>
+                        <ul>End date: {data.end}</ul>
+                        <div>
+                            <p><b>{data.total}</b></p>
+                        </div>       
+                    </div>
+               ) 
+            }
 
             return null
         })
