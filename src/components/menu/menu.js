@@ -11,7 +11,7 @@ class Menu extends Component {
                 </div>
                 <div>
                     <h1>Film Production<br/>Tools</h1>
-                    <h4>beta v2.0</h4>
+                    <h4>beta v2.1</h4>
                 </div>
                     <NavItem nav="/" linkName="Home" faIcon="fa fa-home fa-3x" className="navLink blue" />
                     <NavItem nav="/holiday_pay_calculator" linkName="Holiday Pay Calculator" faIcon="fa fa-plane fa-3x" className="navLink green" />
