@@ -27,13 +27,27 @@ input[type=number]::-webkit-input-placeholder {
     font-size: 80%;
 }
 
+
+.framerate-input {
+    margin-top: 30px;
+}
+
+.framerate-input .frame {
+    margin: 20px auto 0px;
+    width: 30%;
+}
+
+.framerate-input .frame .form-element {
+    width: 100%;
+}
+
 .framerate-input form {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr 75px;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 0px;
     text-align: center;
     padding: 50px;
 }
