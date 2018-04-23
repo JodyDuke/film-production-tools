@@ -2,8 +2,10 @@ export const holPay = (props) => {
     const holPerWeek = (props.totalHol / 52);
     //Total amount of holiday available to employee
     const availableHol = ((((holPerWeek * props.weeksEmployed).toFixed(2)) / 5) * props.daysWorked).toFixed(2);
+    console.log('available holiday: ', availableHol)
     //Holiday remaining for time employed
     const remainingHol = (availableHol - props.holTaken).toFixed(2);
+    console.log('remaining holiday: ', remainingHol)
     //Total amount earned by employee before tax
     const totalEarnt = props.payRate * props.weeksEmployed;
     //Total amount of holiday owed to the employee
@@ -13,7 +15,7 @@ export const holPay = (props) => {
 
     return {
         moneyOwed : moneyOwed,
-        holDaysOwed : (totalHolOwed / 100).toFixed(1),
+        holDaysOwed : availableHol,
         holDaysRemaining : remainingHol,
         totalPay : totalEarnt
     }
